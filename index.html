@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio and resume of CHUKKA ASHISH, Computer Science graduate specializing in Artificial Intelligence and Machine Learning." />
+  <title>CHUKKA ASHIHSH| AI & Machine Learning</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#121a2e;--text:#eef2ff;--muted:#aab5cf;--accent:#70e1c1;--accent2:#8aa4ff;--line:rgba(255,255,255,.11)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1d2a50 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:.3px}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
+    .navlinks a:hover{color:var(--accent)}
+    .hero{padding:88px 0 72px;display:grid;grid-template-columns:1.45fr .75fr;align-items:center;gap:48px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:100px;padding:7px 13px;color:var(--accent);font-size:.84rem;background:rgba(112,225,193,.06)}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.05;letter-spacing:-.055em;margin:23px 0 16px}
+    h1 span{color:var(--accent)}
+    .lead{font-size:1.13rem;color:var(--muted);max-width:650px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 18px;font-weight:700;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--accent);color:#08131a;border-color:var(--accent)}
+    .btn:hover{transform:translateY(-2px)}
+    .profile{border:1px solid var(--line);border-radius:26px;padding:26px;background:linear-gradient(145deg,rgba(138,164,255,.13),rgba(112,225,193,.06));box-shadow:0 25px 80px rgba(0,0,0,.2)}
+    .avatar{width:84px;height:84px;border-radius:24px;display:grid;place-items:center;font-size:2rem;font-weight:900;color:#08131a;background:linear-gradient(135deg,var(--accent),var(--accent2));margin-bottom:20px}
+    .profile h2{margin:0;font-size:1.35rem}.profile p{color:var(--muted);margin:5px 0 20px}
+    .quick{display:grid;gap:13px}.quick div{padding-top:12px;border-top:1px solid var(--line);font-size:.92rem;overflow-wrap:anywhere}.quick b{display:block;color:var(--muted);font-size:.76rem;text-transform:uppercase;letter-spacing:.09em}
+    section{padding:45px 0 55px}
+    .section-head{margin-bottom:26px}.kicker{color:var(--accent);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em}
+    h2.section-title{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.035em;line-height:1.2;margin:7px 0}
+    .intro{max-width:760px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{background:rgba(18,26,46,.82);border:1px solid var(--line);border-radius:20px;padding:23px}
+    .card h3{margin:0 0 8px;font-size:1.12rem}.card p{margin:0;color:var(--muted)}
+    .taglist{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+    .tag{font-size:.8rem;color:#dce5ff;background:rgba(138,164,255,.12);border:1px solid rgba(138,164,255,.2);padding:5px 10px;border-radius:100px}
+    .timeline{display:grid;gap:15px}.timeline .card{position:relative}
+    .meta{color:var(--accent);font-size:.84rem;font-weight:700;margin-bottom:7px}
+    .skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .skill{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(18,26,46,.65)}
+    .skill h3{font-size:.98rem;margin:0 0 8px}.skill p{color:var(--muted);font-size:.92rem;margin:0}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap;background:linear-gradient(120deg,rgba(112,225,193,.12),rgba(138,164,255,.12));border:1px solid var(--line);border-radius:24px;padding:30px}
+    .contact h2{margin:0 0 7px}.contact p{margin:0;color:var(--muted)}
+    footer{padding:25px 0 35px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:40px}
+    .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:58px 0 35px;gap:28px}.profile{max-width:500px}.grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:12px;font-size:.82rem}nav{align-items:flex-start;padding:16px 0;flex-direction:column}}
+    @media(max-width:440px){.skills{grid-template-columns:1fr}.navlinks{gap:10px}.card{padding:19px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Main navigation">
+    <a class="brand" href="#home">ASHISH<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Computer Science Graduate · AI & ML</div>
+      <h1>Hi, I'm<br><span>CHUKKA ASHISH.</span></h1>
+      <p class="lead">I’m a Computer Science and Engineering graduate focused on Artificial Intelligence and Machine Learning. I enjoy building practical technology solutions, from web applications to intelligent tools for agriculture.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work ↗</a>
+        <a class="btn" href="ashish_resume.pdf" download>Download Resume ↓</a>
+      </div>
+    </div>
+    <aside class="profile">
+      <div class="avatar">CA</div>
+      <h2>CHUKKA ASHISH</h2>
+      <p>AI & Machine Learning · Web Development</p>
+      <div class="quick">
+        <div><b>Location</b>Hyderabad, India</div>
+        <div><b>Email</b><a href="mailto:ashishchukka9@gmail.com">ashishchukka9@gmail.com</a></div>
+        <div><b>Phone</b><a href="tel:+919959725510">+91 99597 25510</a></div>
+        <div><b>LinkedIn</b><a href="https://linkedin.com/in/ashish-chukka" target="_blank" rel="noopener">linkedin.com/in/ashish-chukka ↗</a></div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="about"><div class="wrap">
+    <div class="section-head"><div class="kicker">A little about me</div><h2 class="section-title">Building useful things with technology.</h2></div>
+    <p class="intro">I completed my Bachelor of Engineering in Computer Science and Engineering (Artificial Intelligence and Machine Learning) at AVN Institute of Engineering and Technology, Hyderabad, in 2025. My interests include Python, Java, web development, machine learning, and AI tools. My academic projects explore how intelligent systems can support farmers and crop-related decisions.</p>
+  </div></section>
+
+  <section id="skills"><div class="wrap">
+    <div class="section-head"><div class="kicker">What I work with</div><h2 class="section-title">Technical skills</h2></div>
+    <div class="skills">
+      <div class="skill"><h3>Programming</h3><p>Python, Java, JavaScript</p></div>
+      <div class="skill"><h3>Web Development</h3><p>HTML5, CSS</p></div>
+      <div class="skill"><h3>AI & Machine Learning</h3><p>Machine Learning, AI tools</p></div>
+      <div class="skill"><h3>Libraries & Frameworks</h3><p>Scikit-learn, TensorFlow, Flask, Pandas</p></div>
+      <div class="skill"><h3>Agriculture Technology</h3><p>Crop recommendation, NPK monitoring concepts</p></div>
+      <div class="skill"><h3>Soft Skills</h3><p>Problem-solving, communication</p></div>
+    </div>
+  </div></section>
+
+  <section id="projects"><div class="wrap">
+    <div class="section-head"><div class="kicker">Selected academic work</div><h2 class="section-title">Projects</h2><p class="intro">Projects listed from my resume.</p></div>
+    <div class="grid">
+      <article class="card">
+        <div class="meta">MAJOR PROJECT</div><h3>Agribot — Intelligent Chatbot for Farmers</h3>
+        <p>An intelligent chatbot concept for farmers featuring crop prediction and soil NPK monitoring, designed around practical agricultural support.</p>
+        <div class="taglist"><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">Flask</span><span class="tag">Pandas</span></div>
+      </article>
+      <article class="card">
+        <div class="meta">MINI PROJECT</div><h3>Crop Recommendation System Using Machine Learning</h3>
+        <p>A machine-learning project focused on recommending suitable crops based on agricultural input data.</p>
+        <div class="taglist"><span class="tag">Machine Learning</span><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Flask</span></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section id="experience"><div class="wrap">
+    <div class="section-head"><div class="kicker">Learning & experience</div><h2 class="section-title">Internships</h2></div>
+    <div class="timeline">
+      <article class="card"><div class="meta">JULY 2025 – PRESENT · AS LISTED IN RESUME</div><h3>Novodita Infotech</h3><p>Internship experience listed in the resume. Focus areas include programming and AI/ML-related skills.</p></article>
+      <article class="card"><div class="meta">JAVA INTERNSHIP</div><h3>Code Begun</h3><p>Java internship listed in the resume; certificate also noted.</p></article>
+    </div>
+  </div></section>
+
+  <section id="education"><div class="wrap">
+    <div class="section-head"><div class="kicker">Academic background</div><h2 class="section-title">Education & certifications</h2></div>
+    <div class="grid">
+      <article class="card"><div class="meta">2025</div><h3>Bachelor of Engineering</h3><p>AVN Institute of Engineering and Technology, Hyderabad<br>Computer Science and Engineering — Artificial Intelligence and Machine Learning</p></article>
+      <article class="card"><div class="meta">2019–2021</div><h3>Intermediate (XII)</h3><p>Sri Chaitanya Junior College<br>Mathematics, Physics, Chemistry</p></article>
+      <article class="card"><div class="meta">2019</div><h3>Class X</h3><p>Blue Bells High School<br>Mathematics, Physics, English, Social Studies and Biology</p></article>
+      <article class="card"><div class="meta">CERTIFICATIONS</div><h3>Internship certificates</h3><p>Novodita Infotech certificate and Code Begun Java internship certificate.</p></article>
+    </div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <div class="contact"><div><div class="kicker">Let's connect</div><h2>Have an opportunity in mind?</h2><p>Feel free to reach out about entry-level roles, internships, or projects.</p></div><div class="actions"><a class="btn primary" href="mailto:ashishchukka9@gmail.com">Email me ↗</a><a class="btn" href="https://linkedin.com/in/ashish-chukka" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+  </div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Chukka Ashish</span><span>Designed as a responsive personal portfolio.</span></div></footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
